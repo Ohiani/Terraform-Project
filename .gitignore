@@ -1,0 +1,10 @@
+#The .terraform directory
+.terraform/*
+
+#The tf state file and any other backup
+*.tfstate
+*.tfstate.*
+
+
+#The SSH private key file
+*.pem
