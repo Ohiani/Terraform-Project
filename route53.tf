@@ -14,3 +14,15 @@ resource "aws_route53_record" "subdomain_a_record" {
   }
 }
 
+resource "aws_route53_record" "subdomain_cname_record" {
+  zone_id = aws_route53_zone.main.zone_id
+  name    = "www"
+  type    = "CNAME"
+
+  alias {
+    name    = var.domain_names.subdomain_name
+    zone_id = aws_route53_zone.main.zone_id
+  }
+}
+   
+
